@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Principles of Pharmacology</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f4ef;
+    --surface: #ffffff;
+    --accent: #1a5c8a;
+    --accent2: #2e86c1;
+    --gold: #c9a84c;
+    --text: #1c2b3a;
+    --muted: #7a8a99;
+    --border: #dde4ec;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  header {
+    background: var(--accent);
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 3rem 3rem;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(201,168,76,0.25) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -60px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .header-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 840px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .tag {
+    display: inline-block;
+    border: 1px solid rgba(201,168,76,0.6);
+    color: var(--gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.9rem;
+    border-radius: 20px;
+    margin-bottom: 1.2rem;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  .header-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(201,168,76,0.4);
+    opacity: 0.85;
+  }
+
+  main {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin: 2.5rem 0 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  p { margin-bottom: 1.3rem; font-size: 1rem; color: #3a4e60; }
+
+  .principles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .principle-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--gold);
+    padding: 1.2rem 1.4rem;
+    border-radius: 6px;
+  }
+
+  .principle-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+
+  .principle-card p { font-size: 0.9rem; margin: 0; color: var(--muted); }
+
+  .quote-block {
+    background: var(--accent);
+    color: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '"';
+    font-family: 'DM Serif Display', serif;
+    font-size: 5rem;
+    color: rgba(255,255,255,0.15);
+    position: absolute;
+    top: -1rem; left: 1rem;
+    line-height: 1;
+  }
+
+  .quote-block p { color: rgba(255,255,255,0.9); margin: 0; font-style: italic; }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <span class="tag">Pharmacology</span>
+      <h1>Principles of Pharmacology</h1>
+    </div>
+    <!-- Replace src with the path to your img_pharmacology.jpg file -->
+    <img class="header-img"
+         src="img_pharmacology.jpg"
+         onerror="this.style.display='none'"
+         alt="Pills">
+  </div>
+</header>
+
+<main>
+  <p>Pharmacology is the science of how chemical substances interact with living organisms. It investigates drug mechanisms, biological effects, distribution within the body, and the pathways by which substances are ultimately eliminated.</p>
+
+  <h2>Two Pillars of Pharmacology</h2>
+  <div class="principles-grid">
+    <div class="principle-card">
+      <h3>Pharmacodynamics</h3>
+      <p>Studies what the drug does to the body: mechanisms of action, receptor binding, therapeutic effects, and adverse reactions.</p>
+    </div>
+    <div class="principle-card">
+      <h3>Pharmacokinetics</h3>
+      <p>Studies what the body does to the drug: absorption, distribution, metabolism, and excretion — known as the ADME model.</p>
+    </div>
+  </div>
+
+  <h2>Receptors and Targets</h2>
+  <p>Most drugs exert their effects by binding to specific receptors — protein molecules located on cell surfaces or within cells. A substance that activates a receptor is an agonist; one that blocks it is an antagonist. The selectivity of drug-receptor binding determines the therapeutic index: the ratio between an effective dose and a toxic one.</p>
+
+  <h2>The Dose-Response Relationship</h2>
+  <p>A fundamental principle of pharmacology is the dose-response relationship. Too small a dose yields no effect; too large causes toxicity. The optimal dose maximises benefit while minimising risk. This principle underpins the individualisation of therapy — tailoring treatment to each patient's unique physiological profile — which is the cornerstone of modern, precision pharmacology.</p>
+
+  <div class="quote-block">
+    <p>All things are poison and nothing is without poison — the dose alone makes a thing not a poison.<br>— Paracelsus</p>
+  </div>
+</main>
+
+<footer>MedCatalog · Pharmaceutical Reference · 2026</footer>
+</body>
+</html>

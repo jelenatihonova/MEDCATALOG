@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Основы фармакологии</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f4ef;
+    --surface: #ffffff;
+    --accent: #1a5c8a;
+    --accent2: #2e86c1;
+    --gold: #c9a84c;
+    --text: #1c2b3a;
+    --muted: #7a8a99;
+    --border: #dde4ec;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  header {
+    background: var(--accent);
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 3rem 3rem;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(201,168,76,0.25) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -60px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .header-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 840px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .tag {
+    display: inline-block;
+    border: 1px solid rgba(201,168,76,0.6);
+    color: var(--gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.9rem;
+    border-radius: 20px;
+    margin-bottom: 1.2rem;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  .header-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(201,168,76,0.4);
+    opacity: 0.85;
+  }
+
+  main {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin: 2.5rem 0 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  p { margin-bottom: 1.3rem; font-size: 1rem; color: #3a4e60; }
+
+  .principles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .principle-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--gold);
+    padding: 1.2rem 1.4rem;
+    border-radius: 6px;
+  }
+
+  .principle-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+
+  .principle-card p { font-size: 0.9rem; margin: 0; color: var(--muted); }
+
+  .quote-block {
+    background: var(--accent);
+    color: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '"';
+    font-family: 'DM Serif Display', serif;
+    font-size: 5rem;
+    color: rgba(255,255,255,0.15);
+    position: absolute;
+    top: -1rem; left: 1rem;
+    line-height: 1;
+  }
+
+  .quote-block p { color: rgba(255,255,255,0.9); margin: 0; font-style: italic; }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+</style>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <span class="tag">Фармакология</span>
+      <h1>Основы фармакологии</h1>
+    </div>
+    <!-- Замените src на путь к вашему файлу img_pharmacology.jpg -->
+    <img class="header-img"
+         src="img_pharmacology.jpg"
+         onerror="this.style.display='none'"
+         alt="Pills">
+  </div>
+</header>
+
+<main>
+  <p>Фармакология — наука о взаимодействии химических веществ с живыми организмами. Она изучает, как лекарства воздействуют на биологические системы, каков механизм их действия, как они распределяются в организме и как выводятся.</p>
+
+  <h2>Два кита фармакологии</h2>
+  <div class="principles-grid">
+    <div class="principle-card">
+      <h3>Фармакодинамика</h3>
+      <p>Изучает, как препарат воздействует на организм: механизмы действия, рецепторное связывание, терапевтические и побочные эффекты.</p>
+    </div>
+    <div class="principle-card">
+      <h3>Фармакокинетика</h3>
+      <p>Изучает, как организм обрабатывает препарат: всасывание, распределение, метаболизм и выведение (ADME).</p>
+    </div>
+  </div>
+
+  <h2>Рецепторы и мишени</h2>
+  <p>Большинство лекарств действуют через специфические рецепторы — белковые молекулы на поверхности или внутри клетки. Вещество, активирующее рецептор, называется агонистом; вещество, блокирующее его, — антагонистом. Избирательность связывания определяет терапевтический индекс — соотношение эффективной и токсической доз.</p>
+
+  <h2>Дозозависимый эффект</h2>
+  <p>Одним из фундаментальных принципов является зависимость «доза — эффект». Слишком малая доза не даёт результата, слишком большая — вызывает токсичность. Оптимальная доза обеспечивает максимальную пользу при минимальном риске. Именно поэтому индивидуализация терапии — краеугольный камень современной фармакологии.</p>
+
+  <div class="quote-block">
+    <p>Всё есть яд и всё есть лекарство — дозой определяется одно от другого.<br>— Парацельс</p>
+  </div>
+</main>
+
+<footer>MedCatalog · Pharmaceutical Reference · 2026</footer>
+<script src="../assets/search.js"></script>
+</body>
+</html>

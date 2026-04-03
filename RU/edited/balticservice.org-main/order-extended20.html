@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="/FAV.png">
+<meta charset="UTF-8">
+<title>Confirm Access</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f8;
+    text-align:center;
+    padding:40px;
+}
+.box{
+    background:white;
+    max-width:600px;
+    margin:auto;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+button{
+    background:#2d72ff;
+    color:white;
+    border:none;
+    padding:15px 25px;
+    font-size:18px;
+    border-radius:6px;
+    cursor:pointer;
+}
+button:hover{background:#1a5be0;}
+</style>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+
+<body>
+<nav class="nav">
+<a href="../../index.html">Главная</a>
+<a href="../../categories/index.html">Категории</a>
+<a href="../../ed/index.html">Эректильная дисфункция</a>
+<a href="../../weight-loss/index.html">Похудение</a>
+<a href="../../articles/index.html">Статьи</a>
+<a href="../../az/index.html">Список A-Z</a>
+<a href="../../about.html">О сайте</a>
+
+<div class="search-wrapper" style="position:relative;display:inline-block;">
+<input type="text" class="searchInput"
+placeholder="Поиск..."
+onkeyup="searchDrugs(this)"
+style="padding:8px;border-radius:6px;border:1px solid #ccc;margin-left:15px;">
+
+<div class="searchResults" style="
+position:absolute;
+top:40px;
+left:15px;
+background:white;
+border:1px solid #ccc;
+width:250px;
+max-height:300px;
+overflow-y:auto;
+display:none;
+z-index:999;
+"></div>
+</div>
+</nav>
+
+
+<div class="box">
+<h1>Standard Consultation Access</h1>
+<p>Short-term personalized guidance program</p>
+<p><strong>Total: 25 €</strong></p>
+
+<br><br>
+
+<a href="request.html?product=extended20">
+<button>Continue</button>
+</a>
+
+</div>
+
+<script src="../../assets/search.js"></script>
+<script src="./assets/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antibiotic Resistance</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f4ef;
+    --surface: #ffffff;
+    --accent: #1a5c8a;
+    --accent2: #2e86c1;
+    --gold: #c9a84c;
+    --text: #1c2b3a;
+    --muted: #7a8a99;
+    --border: #dde4ec;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  header {
+    background: var(--accent);
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 3rem 3rem;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(201,168,76,0.25) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -60px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .header-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 840px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .tag {
+    display: inline-block;
+    border: 1px solid rgba(201,168,76,0.6);
+    color: var(--gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.9rem;
+    border-radius: 20px;
+    margin-bottom: 1.2rem;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  .header-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(201,168,76,0.4);
+    opacity: 0.85;
+  }
+
+  main {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin: 2.5rem 0 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  p { margin-bottom: 1.3rem; font-size: 1rem; color: #3a4e60; }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--gold);
+    padding: 1.2rem 1rem;
+    border-radius: 6px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    color: var(--accent);
+    display: block;
+  }
+
+  .stat-label { font-size: 0.8rem; color: var(--muted); line-height: 1.4; }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--gold);
+    padding: 1.2rem 1.4rem;
+    border-radius: 6px;
+  }
+
+  .card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+
+  .card p { font-size: 0.9rem; margin: 0; color: var(--muted); }
+
+  .quote-block {
+    background: var(--accent);
+    color: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '"';
+    font-family: 'DM Serif Display', serif;
+    font-size: 5rem;
+    color: rgba(255,255,255,0.15);
+    position: absolute;
+    top: -1rem; left: 1rem;
+    line-height: 1;
+  }
+
+  .quote-block p { color: rgba(255,255,255,0.9); margin: 0; font-style: italic; }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <span class="tag">Microbiology · Infectious Disease</span>
+      <h1>Antibiotic Resistance</h1>
+    </div>
+    <!-- Replace src with the path to your img_antibiotic_resistance.jpg file -->
+    <img class="header-img"
+         src="img_antibiotic_resistance.jpg"
+         onerror="this.style.display='none'"
+         alt="Bacteria culture">
+  </div>
+</header>
+
+<main>
+  <p>Antibiotic resistance is one of the most pressing threats to global public health. It occurs when bacteria evolve mechanisms to survive exposure to antibiotics that were once effective against them, rendering standard treatments ineffective and turning common infections into potentially life-threatening conditions.</p>
+
+  <div class="stat-row">
+    <div class="stat">
+      <span class="stat-num">700K</span>
+      <span class="stat-label">deaths attributed globally each year</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">10M</span>
+      <span class="stat-label">projected annual deaths by 2050</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">~70%</span>
+      <span class="stat-label">of antibiotics used in livestock farming</span>
+    </div>
+  </div>
+
+  <h2>Mechanisms of Resistance</h2>
+  <p>Bacteria develop resistance through several distinct pathways: altering the molecular targets that antibiotics bind to, producing enzymes that destroy or inactivate the drug, and deploying efflux pumps — molecular machines that actively expel the antibiotic from the cell before it can take effect.</p>
+
+  <div class="cards-grid">
+    <div class="card">
+      <h3>Horizontal Gene Transfer</h3>
+      <p>Resistant strains can pass resistance genes to other bacteria — including unrelated species — at remarkable speed, spreading the problem far beyond a single organism.</p>
+    </div>
+    <div class="card">
+      <h3>Mutational Adaptation</h3>
+      <p>Under antibiotic pressure, only the most resistant individuals survive and reproduce, giving rise to entirely new resistant populations through natural selection.</p>
+    </div>
+  </div>
+
+  <h2>Drivers of the Crisis</h2>
+  <p>The primary drivers include overuse and misuse of antibiotics: self-medication, incomplete treatment courses, and widespread prophylactic use in agriculture. Globalisation and international travel accelerate the spread of resistant strains across borders, transforming local outbreaks into global public health emergencies.</p>
+
+  <div class="quote-block">
+    <p>"The world is heading toward a post-antibiotic era, in which common infections and minor injuries can once again kill."<br>— World Health Organization</p>
+  </div>
+
+  <h2>Strategies and Solutions</h2>
+  <p>Combating resistance demands a multifaceted approach: developing new antibiotic classes, enforcing strict prescription controls, educating patients and healthcare providers, and fostering international epidemiological surveillance networks. Vaccination, rapid point-of-care diagnostics, and bacteriophage therapy are emerging as promising alternatives to conventional antibiotics.</p>
+</main>
+
+<footer>MedCatalog · Pharmaceutical Reference · 2026</footer>
+</body>
+</html>

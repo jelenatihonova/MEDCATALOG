@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Антибиотикорезистентность</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f4ef;
+    --surface: #ffffff;
+    --accent: #1a5c8a;
+    --accent2: #2e86c1;
+    --gold: #c9a84c;
+    --text: #1c2b3a;
+    --muted: #7a8a99;
+    --border: #dde4ec;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  header {
+    background: var(--accent);
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 3rem 3rem;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(201,168,76,0.25) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -60px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .header-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 840px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .tag {
+    display: inline-block;
+    border: 1px solid rgba(201,168,76,0.6);
+    color: var(--gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.9rem;
+    border-radius: 20px;
+    margin-bottom: 1.2rem;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  .header-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(201,168,76,0.4);
+    opacity: 0.85;
+  }
+
+  main {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin: 2.5rem 0 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  p { margin-bottom: 1.3rem; font-size: 1rem; color: #3a4e60; }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--gold);
+    padding: 1.2rem 1rem;
+    border-radius: 6px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    color: var(--accent);
+    display: block;
+  }
+
+  .stat-label { font-size: 0.8rem; color: var(--muted); line-height: 1.4; }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--gold);
+    padding: 1.2rem 1.4rem;
+    border-radius: 6px;
+  }
+
+  .card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+
+  .card p { font-size: 0.9rem; margin: 0; color: var(--muted); }
+
+  .quote-block {
+    background: var(--accent);
+    color: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '"';
+    font-family: 'DM Serif Display', serif;
+    font-size: 5rem;
+    color: rgba(255,255,255,0.15);
+    position: absolute;
+    top: -1rem; left: 1rem;
+    line-height: 1;
+  }
+
+  .quote-block p { color: rgba(255,255,255,0.9); margin: 0; font-style: italic; }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+</style>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <span class="tag">Микробиология · Инфекционные болезни</span>
+      <h1>Антибиотикорезистентность</h1>
+    </div>
+    <!-- Замените src на путь к вашему файлу img_antibiotic_resistance.jpg -->
+    <img class="header-img"
+         src="img_antibiotic_resistance.jpg"
+         onerror="this.style.display='none'"
+         alt="Bacteria culture">
+  </div>
+</header>
+
+<main>
+  <p>Антибиотикорезистентность — одна из наиболее серьёзных угроз современного здравоохранения. Это явление возникает, когда бактерии приобретают способность выживать при воздействии антибиотиков, которые ранее были эффективны против них, делая стандартное лечение неэффективным.</p>
+
+  <div class="stat-row">
+    <div class="stat">
+      <span class="stat-num">700К</span>
+      <span class="stat-label">смертей ежегодно в мире</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">10М</span>
+      <span class="stat-label">прогноз смертности к 2050 году</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">~70%</span>
+      <span class="stat-label">антибиотиков применяется в животноводстве</span>
+    </div>
+  </div>
+
+  <h2>Механизмы развития устойчивости</h2>
+  <p>Бактерии вырабатывают резистентность несколькими путями: изменяя молекулярные мишени воздействия препарата, продуцируя ферменты, которые разрушают или инактивируют антибиотик, а также активируя помпы выброса — молекулярные насосы, удаляющие препарат из клетки прежде, чем он успевает подействовать.</p>
+
+  <div class="cards-grid">
+    <div class="card">
+      <h3>Горизонтальный перенос генов</h3>
+      <p>Устойчивые штаммы способны передавать гены резистентности другим бактериям — в том числе не родственным видам — с высокой скоростью.</p>
+    </div>
+    <div class="card">
+      <h3>Мутационная адаптация</h3>
+      <p>Под давлением антибиотика выживают лишь наиболее устойчивые особи, которые и дают начало новым резистентным популяциям.</p>
+    </div>
+  </div>
+
+  <h2>Причины распространения</h2>
+  <p>Главные факторы — бесконтрольное и нерациональное применение антибиотиков: самолечение, неполные курсы терапии и массовое профилактическое использование в сельском хозяйстве. Глобализация и международные поездки способствуют быстрому распространению устойчивых штаммов через границы.</p>
+
+  <div class="quote-block">
+    <p>«Мир вступает в постантибиотическую эру, в которой обычные инфекции и незначительные травмы снова могут убивать.»<br>— Всемирная организация здравоохранения</p>
+  </div>
+
+  <h2>Пути решения проблемы</h2>
+  <p>Борьба с резистентностью требует комплексного подхода: разработки новых классов антибиотиков, строгого контроля назначений, образовательных программ для населения и врачей, а также международного сотрудничества в области эпидемиологического надзора. Вакцинация, быстрая диагностика и фаговая терапия рассматриваются как перспективные альтернативы традиционным антибиотикам.</p>
+</main>
+
+<footer>MedCatalog · Pharmaceutical Reference · 2026</footer>
+<script src="../assets/search.js"></script>
+</body>
+</html>

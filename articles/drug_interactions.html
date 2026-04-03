@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drug Interactions in Therapy</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f4ef;
+    --surface: #ffffff;
+    --accent: #1a5c8a;
+    --accent2: #2e86c1;
+    --gold: #c9a84c;
+    --text: #1c2b3a;
+    --muted: #7a8a99;
+    --border: #dde4ec;
+    --green: #2a7d55;
+    --red: #9b3232;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  header {
+    background: var(--accent);
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 3rem 3rem;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(201,168,76,0.25) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -60px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .header-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 840px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .tag {
+    display: inline-block;
+    border: 1px solid rgba(201,168,76,0.6);
+    color: var(--gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.9rem;
+    border-radius: 20px;
+    margin-bottom: 1.2rem;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  .header-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(201,168,76,0.4);
+    opacity: 0.85;
+  }
+
+  main {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin: 2.5rem 0 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  p { margin-bottom: 1.3rem; font-size: 1rem; color: #3a4e60; }
+
+  .interaction-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .icard {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.2rem 1.4rem;
+    border-radius: 6px;
+  }
+
+  .icard.synergy    { border-top: 3px solid var(--green); }
+  .icard.additive   { border-top: 3px solid var(--gold); }
+  .icard.antagonism { border-top: 3px solid var(--red); }
+
+  .icard h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .icard.synergy h3    { color: var(--green); }
+  .icard.additive h3   { color: #7a6020; }
+  .icard.antagonism h3 { color: var(--red); }
+
+  .icard p { font-size: 0.88rem; margin: 0; color: var(--muted); line-height: 1.6; }
+
+  .examples-list {
+    list-style: none;
+    margin: 1rem 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .examples-list li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    padding: 0.75rem 1.2rem;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.92rem;
+    color: #3a4e60;
+  }
+
+  .examples-list li strong { color: var(--accent); font-weight: 500; }
+
+  .warning-box {
+    background: var(--surface);
+    border: 1px solid #f0d8b0;
+    border-left: 4px solid var(--gold);
+    padding: 1.2rem 1.5rem;
+    border-radius: 0 6px 6px 0;
+    margin: 2rem 0;
+  }
+
+  .warning-box p { margin: 0; color: #5a3e10; font-size: 0.95rem; }
+
+  .quote-block {
+    background: var(--accent);
+    color: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '"';
+    font-family: 'DM Serif Display', serif;
+    font-size: 5rem;
+    color: rgba(255,255,255,0.15);
+    position: absolute;
+    top: -1rem; left: 1rem;
+    line-height: 1;
+  }
+
+  .quote-block p { color: rgba(255,255,255,0.9); margin: 0; font-style: italic; }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <span class="tag">Clinical Pharmacology · Therapy</span>
+      <h1>Drug Interactions in Therapy</h1>
+    </div>
+    <!-- Replace src with the path to your img_drug_interactions.jpg file -->
+    <img class="header-img"
+         src="img_drug_interactions.jpg"
+         onerror="this.style.display='none'"
+         alt="Drug interactions">
+  </div>
+</header>
+
+<main>
+  <p>Drug interactions represent one of the central challenges in clinical pharmacology. When a patient takes two or more medications simultaneously, their combined effects may be amplified, diminished, or produce entirely unexpected outcomes that neither drug would cause on its own.</p>
+
+  <h2>Three Types of Interaction</h2>
+  <div class="interaction-grid">
+    <div class="icard synergy">
+      <h3>Synergism</h3>
+      <p>The combined effect exceeds the sum of individual effects. Deliberately exploited in oncology and complex infectious disease regimens.</p>
+    </div>
+    <div class="icard additive">
+      <h3>Additivity</h3>
+      <p>The combined effect equals the sum of the parts. A neutral interaction with no amplification or reduction in therapeutic action.</p>
+    </div>
+    <div class="icard antagonism">
+      <h3>Antagonism</h3>
+      <p>One drug reduces or blocks another's effect. Can be therapeutically useful — or dangerously harmful — depending on context.</p>
+    </div>
+  </div>
+
+  <h2>Mechanisms of Interaction</h2>
+  <p>Drug interactions occur at three distinct levels. <strong>Pharmacokinetic</strong> interactions arise when one drug alters the absorption, metabolism, or excretion of another — most commonly via the liver's cytochrome P450 enzyme system. <strong>Pharmacodynamic</strong> interactions involve competition for the same receptors or summation of effects. <strong>Physicochemical</strong> interactions occur before drugs even reach the bloodstream, when chemical reactions take place in combined solutions.</p>
+
+  <h2>Clinically Significant Examples</h2>
+  <ul class="examples-list">
+    <li><strong>Warfarin + aspirin</strong> — dramatically increased risk of bleeding</li>
+    <li><strong>Statins + macrolide antibiotics</strong> — elevated risk of myopathy</li>
+    <li><strong>SSRIs + triptans</strong> — serotonin syndrome</li>
+    <li><strong>Antacids + tetracyclines</strong> — significantly reduced antibiotic absorption</li>
+  </ul>
+
+  <div class="warning-box">
+    <p>⚠️ Elderly patients taking five or more medications simultaneously (polypharmacy) face the greatest risk. According to WHO data, more than 50% of serious adverse drug reactions are directly linked to drug-drug interactions.</p>
+  </div>
+
+  <h2>Prevention Strategies</h2>
+  <p>Key preventive measures include maintaining a comprehensive and up-to-date medication list for every patient, using interaction databases at the point of prescribing, and consulting a clinical pharmacologist for complex therapeutic regimens. It is equally important to educate patients to always disclose dietary supplements, herbal preparations, and over-the-counter medications — all of which can participate in clinically significant interactions.</p>
+
+  <div class="quote-block">
+    <p>To treat a patient well is to understand not only each drug in isolation, but what happens when they encounter one another inside a single human body.</p>
+  </div>
+</main>
+
+<footer>MedCatalog · Pharmaceutical Reference · 2026</footer>
+</body>
+</html>
